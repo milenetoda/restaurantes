@@ -1,0 +1,67 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restaurantes</title>
+<style>
+    #resultado {
+        font-family: fantasy;
+        font-size: 40px;
+        text-align: center;
+    }
+</style>
+<div id="resultado"></div>
+<script>
+    const lista = [
+    "Barbaresco Express", 
+"Barbaresco",
+"Bobs",
+"Bullguer",
+"Burger King",
+"Burguin",
+"California Chicken",
+"Cantina da Nena",
+"Casa de massas Vila Ema",
+"Churrasco",
+"Frango no Pote",
+"Griletto",
+"KFC",
+"La Panqueca", 
+"Mania de Churrasco",
+"Mc Donalds",
+"Montana",
+"Nova Bréscia",
+"Outback",
+"Pasterello",
+"Pin Burger",
+"Rene Lanches",
+"Restaurante Avenida",
+"Rustick",
+"Spark Grill",
+"Spoleto",
+"Subway",
+"Taco Bell",
+"Toasted Potato",
+"Yex"
+    ]
+    
+    function sorteio (){
+        var resultado = document.getElementById("resultado");
+    var e = Math.random()*lista.length
+    e = Math.floor(e)
+    resultado.innerHTML = lista[e];
+    }
+    var i = 0;
+    var timerid = setInterval(function (){
+        sorteio();
+        i++;
+        console.log(i);
+        if (i==30){
+            clearInterval(timerid);
+        }
+    }, 50 )
+
+
+    
+    
+</script>
+
+
+
