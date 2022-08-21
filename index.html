@@ -5,9 +5,21 @@
         font-family: fantasy;
         font-size: 40px;
         text-align: center;
+		margin-top: 40px;
     }
+	
+	#botao {
+		text-align: center;
+		margin-top: 40px;	
+		
+	}
+	
+	#button {
+		font-size: 20px;
+	}
 </style>
 <div id="resultado"></div>
+<div id="botao"><button id="button">Sortear</button></div>
 <script>
     const lista = [
     "Barbaresco Express", 
@@ -48,20 +60,25 @@
     e = Math.floor(e)
     resultado.innerHTML = lista[e];
     }
-    var i = 0;
-    var timerid = setInterval(function (){
+	
+	var i = 0;
+	
+	function  a(){
+	setTimeout(function (){
         sorteio();
         i++;
         console.log(i);
-        if (i==30){
-            clearInterval(timerid);
+        if (i!=13){
+            a();
         }
-    }, 50 )
+    }, 50*i ) 
+    }
+	
+	var botao = document.getElementById("button");
+	botao.onclick =  function (){
+		a();
+	}
 
-
-    
+    a();
     
 </script>
-
-
-
