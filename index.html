@@ -61,17 +61,18 @@
     resultado.innerHTML = lista[e];
     }
 	
-	var i = 0;
+	
 	
 	function  a(){
-	setTimeout(function (){
+		var i = 0;
+    var timerid = setInterval(function (){
         sorteio();
         i++;
         console.log(i);
-        if (i!=13){
-            a();
+        if (i==30){
+            clearInterval(timerid);
         }
-    }, 50*i ) 
+    }, 50 )			
     }
 	
 	var botao = document.getElementById("button");
